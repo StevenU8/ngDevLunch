@@ -43,5 +43,11 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('welcome')).toBeTruthy();
   }));
 
-  
+  it('should display sign in form', async((done) => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('sign-in')).toBeTruthy();
+  })); 
+
 });

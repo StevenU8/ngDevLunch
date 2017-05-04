@@ -6,11 +6,13 @@ import { CarouselModule } from 'ngx-bootstrap';
 
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    SignInComponent
   ],
   imports: [
     CarouselModule.forRoot(),
