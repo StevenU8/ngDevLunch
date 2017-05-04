@@ -12,7 +12,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
   declarations: [
     AppComponent,
     WelcomeComponent,
-    SignInComponent
+    SignInComponent,
+    
   ],
   imports: [
     CarouselModule.forRoot(),

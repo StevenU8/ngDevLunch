@@ -16,7 +16,8 @@ export class WelcomeComponent {
       "https://cdn.worldvectorlogo.com/logos/angular-3.svg",
       "https://sergeytihon.files.wordpress.com/2015/04/w2.jpg",
       "https://cdn-images-1.medium.com/max/622/1*grk7btEn0OJEQRKgG2Qs2A.png",
-      "https://www.microsoft.com/net/images/learn/languages/fsharp.svg"
+      "https://www.microsoft.com/net/images/learn/languages/fsharp.svg",
+      "assets/images/CrazyAF.PNG"
     ];
   }
 
