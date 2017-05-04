@@ -1,3 +1,4 @@
+import { FSharpService } from './services/fsharp-service.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -12,8 +13,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
   declarations: [
     AppComponent,
     WelcomeComponent,
-    SignInComponent,
-    
+    SignInComponent
   ],
   imports: [
     CarouselModule.forRoot(),
@@ -21,7 +21,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [FSharpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

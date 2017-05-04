@@ -56,4 +56,7 @@ describe('SignInComponent', () => {
     fixture.detectChanges();
     expect(fixture.debugElement.queryAll(By.css('#role'))).toBeTruthy();
   });
+
 });
+
+
