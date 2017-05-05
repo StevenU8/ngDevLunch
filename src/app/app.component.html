@@ -3,5 +3,12 @@
   <button type="submit" class="btn btn-primary" (click)="GenerateTeams()">Generate Teams!</button>
 </div>
 
-<welcome></welcome>
-<sign-in></sign-in>
+<div [hidden]="hideTeams">
+  <div *ngFor = "let team of teams">
+    {{team.Name}} : {{team.MemberNames}}
+  </div>
+</div>
+
+
+<welcome [hidden]="!hideTeams"></welcome>
+<sign-in [hidden]="!hideTeams"></sign-in>

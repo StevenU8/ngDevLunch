@@ -7,7 +7,7 @@ import { Team } from "app/Team";
 @Injectable()
 export class FSharpService {
   options: RequestOptionsArgs;
-
+  baseUrl: string = "http://localhost:8080";
 
   constructor(
     private http: Http,
@@ -20,7 +20,7 @@ export class FSharpService {
 
   GenerateTeams(): Promise<Team[]> {
     console.log("Calling Generate Teams");
-    var url = " /getTeams";
+    var url = this.baseUrl + "/getTeams";
     return this.http
       .get(url, this.options)
       .toPromise()
@@ -31,7 +31,7 @@ export class FSharpService {
 
   SignIn(SignInRequest): void {
     console.log("Calling Sign In");
-    var url = "/signin";
+    var url = this.baseUrl + "/signin";
     let data = JSON.stringify(SignInRequest);
      this.http.post(url, data, this.options)
      .toPromise()
