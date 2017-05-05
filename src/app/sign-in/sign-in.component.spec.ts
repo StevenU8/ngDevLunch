@@ -1,3 +1,5 @@
+import { HttpModule } from '@angular/http';
+import { FSharpService } from './../services/fsharp-service.service';
 import { SignInRequest } from './../SignInRequest';
 import { By } from '@angular/platform-browser';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
@@ -10,9 +12,10 @@ describe('SignInComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [SignInComponent]
-    })
-      .compileComponents();
+      declarations: [SignInComponent],
+      providers: [FSharpService],
+      imports: [HttpModule]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -20,6 +23,8 @@ describe('SignInComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
+
+  
 
   it('should create', () => {
     expect(component).toBeTruthy();
@@ -30,7 +35,7 @@ describe('SignInComponent', () => {
     fixture.detectChanges();
 
     expect(fixture.debugElement.queryAll(By.css('form')).length).toBe(1);
-    expect(fixture.debugElement.queryAll(By.css('button[type="submit"]')).length).toBe(1);    
+    expect(fixture.debugElement.queryAll(By.css('button[type="submit"]')).length).toBe(1);
   });
 
   it('should contain backing properties for sign in info', () => {
@@ -47,7 +52,7 @@ describe('SignInComponent', () => {
     const app = fixture.debugElement.componentInstance;
     fixture.detectChanges();
     expect(fixture.debugElement.queryAll(By.css('#name'))).toBeTruthy();
-    
+
   });
 
   it('should contain field bound to role', () => {

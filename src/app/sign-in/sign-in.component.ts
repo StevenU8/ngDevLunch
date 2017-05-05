@@ -1,7 +1,7 @@
+import { SignInRequest } from './../SignInRequest';
 import { FSharpService } from './../services/fsharp-service.service';
 
 import { Component, OnInit } from '@angular/core';
-import { SignInRequest } from "app/SignInRequest";
 
 @Component({
   selector: 'sign-in',
@@ -14,11 +14,17 @@ export class SignInComponent implements OnInit {
   SignInRequest: SignInRequest;
   
   constructor(
-    //private service: FSharpService
+    private service: FSharpService
     ) { }
 
   ngOnInit() {
      this.SignInRequest = new SignInRequest();
+  }
+
+  SignIn(){
+    this.service.SignIn(this.SignInRequest);
+    this.SignInRequest.Name = "";
+    this.SignInRequest.Role = "";
   }
 
 }

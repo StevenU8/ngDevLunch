@@ -19,7 +19,8 @@ export class FSharpService {
   }
 
   GenerateTeams(): Promise<Team[]> {
-    var url = "";
+    console.log("Calling Generate Teams");
+    var url = " /getTeams";
     return this.http
       .get(url, this.options)
       .toPromise()
@@ -29,7 +30,8 @@ export class FSharpService {
   }
 
   SignIn(SignInRequest): void {
-    var url = "";
+    console.log("Calling Sign In");
+    var url = "/signin";
     let data = JSON.stringify(SignInRequest);
      this.http.post(url, data, this.options)
      .toPromise()

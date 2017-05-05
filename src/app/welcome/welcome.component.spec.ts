@@ -1,3 +1,5 @@
+import { HttpModule } from '@angular/http';
+import { FSharpService } from './../services/fsharp-service.service';
 import { CarouselModule } from 'ngx-bootstrap';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
@@ -11,7 +13,8 @@ describe('WelcomeComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [WelcomeComponent],
-      imports: [CarouselModule.forRoot()]
+      imports: [CarouselModule.forRoot(), HttpModule],
+      providers: [FSharpService],
     })
       .compileComponents();
   }));
@@ -43,7 +46,6 @@ describe('WelcomeComponent', () => {
     slides.forEach(slide => expect(slide.queryAll(By.css('img')).length).toBe(1));
   });
 
-
   it('all images are displayed', () => {
     const fixture = TestBed.createComponent(WelcomeComponent);
     const app = fixture.debugElement.componentInstance;
@@ -54,8 +56,8 @@ describe('WelcomeComponent', () => {
     slides.forEach(slide => displayedImageUrls.push(slide.queryAll(By.css('img'))[0].properties.src));
 
     for (var index = 0; index < displayedImageUrls.length; index++) {
-      var displayedImage = displayedImageUrls[index];
-      var expectedImage = displayedImageUrls[index];
+      let displayedImage = displayedImageUrls[index];
+      let expectedImage = displayedImageUrls[index];
       expect(displayedImage).toBe(expectedImage);
     }
   });

@@ -1,3 +1,4 @@
+import { FSharpService } from './../services/fsharp-service.service';
 import { CarouselModule } from 'ngx-bootstrap';
 import { Component } from '@angular/core';
 
@@ -9,7 +10,7 @@ import { Component } from '@angular/core';
 export class WelcomeComponent {
   imageUrls: string[];
 
-  constructor() {
+  constructor(private FSharpService : FSharpService) {
     this.imageUrls = [
       "https://angular.io/resources/images/logos/angular/angular.svg",
       "https://upload.wikimedia.org/wikipedia/en/thumb/d/d5/Fsharp%2C_Logomark%2C_October_2014.svg/1024px-Fsharp%2C_Logomark%2C_October_2014.svg.png",
@@ -21,4 +22,11 @@ export class WelcomeComponent {
     ];
   }
 
+  GenerateTeams() : void {
+    this.FSharpService.GenerateTeams()
+      .then(response => {
+        //hide signin component
+        //show results component
+      })
+  }
 }
