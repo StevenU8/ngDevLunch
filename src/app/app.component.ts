@@ -17,6 +17,10 @@ export class AppComponent {
 
   GenerateTeams(): void {
     this.FSharpService.GenerateTeams()
-      .then((response: Team[]) => { this.teams = response; })
+      .subscribe((response: Team[]) => { 
+        console.log(response);
+        this.teams = response; 
+        this.hideTeams = false;
+      })
   }
 }
