@@ -1,3 +1,5 @@
+import { HttpModule } from '@angular/http';
+import { FSharpService } from './services/fsharp-service.service';
 import { By } from '@angular/platform-browser';
 import { CarouselModule } from 'ngx-bootstrap';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -12,7 +14,8 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent,
       ],
-      imports: [CarouselModule],
+      imports: [CarouselModule, HttpModule],
+      providers: [FSharpService],
       schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
   }));
